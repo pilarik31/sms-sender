@@ -1,9 +1,10 @@
 <?php
 
-namespace SMSSender;
+namespace SMSSender\Operator;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use SMSSender\Interface\ISMS;
+use SMSSender\Mailer;
 
 class O2 implements ISMS
 {

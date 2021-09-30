@@ -3,7 +3,7 @@
 require_once 'vendor/autoload.php';
 
 use Dotenv\Dotenv;
-use SMSSender\O2;
+use SMSSender\Operator\O2;
 use SMSSender\StatusChecker;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
