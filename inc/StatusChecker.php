@@ -10,7 +10,8 @@ class StatusChecker
 {
     private Client $client;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->client = new Client(['verify' => false]);
     }
 

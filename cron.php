@@ -3,7 +3,8 @@
 require_once 'vendor/autoload.php';
 
 use Dotenv\Dotenv;
-use SMSSender\O2;
+use SMSSender\Operator\O2;
+use SMSSender\Operator\Vodafone;
 use SMSSender\StatusChecker;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
@@ -13,6 +14,9 @@ $dotenv->required(['EMAIL_PORT'])->notEmpty()->isInteger();
 
 $pila = new O2();
 $pila->setNumber('720060552');
+
+$koky = new Vodafone();
+$koky->setNumber('test');
 
 
 $websites = json_decode(
@@ -26,5 +30,5 @@ $status = new StatusChecker();
 foreach ($websites as $website) {
     $res = $status->isOnline($website);
     $res ?: $pila->send($website, 'ne');
+    $res ?: $koky->send($website, $website . ' není dostupná!');
 }
-

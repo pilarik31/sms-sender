@@ -1,6 +1,6 @@
 <?php
 
-namespace SMSSender\Interface;
+namespace SMSSender\Interfaces;
 
 interface ISMS
 {
