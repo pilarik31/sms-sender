@@ -6,7 +6,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use SMSSender\Interfaces\ISMS;
 use SMSSender\Mailer;
 
-class O2 implements ISMS
+
+class Vodafone implements ISMS
 {
     private string $number;
     private string $email;
@@ -18,7 +19,7 @@ class O2 implements ISMS
     }
 
     /**
-     * Simply the user's number.
+     * In case of Vodafone, number is user created email name.
      */
     public function setNumber(string $number): self
     {
@@ -37,6 +38,6 @@ class O2 implements ISMS
 
     public function emailFromNumber(string $number): string
     {
-        return "00420" . $number . "@sms.cz.o2.com";
+        return $number . "@vodafonemail.cz";
     }
 }
