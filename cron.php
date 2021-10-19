@@ -3,20 +3,18 @@
 require_once 'vendor/autoload.php';
 
 use Dotenv\Dotenv;
-use SMSSender\Operator\O2;
-use SMSSender\Operator\Vodafone;
 use SMSSender\StatusChecker;
+use SMSSender\Service\SMSService;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 $dotenv->required(['EMAIL_HOST', 'EMAIL_USERNAME', 'EMAIL_PASSWORD'])->notEmpty();
 $dotenv->required(['EMAIL_PORT'])->notEmpty()->isInteger();
 
-$pila = new O2();
-$pila->setNumber('720060552');
+$smsService = new SMSService();
 
-$koky = new Vodafone();
-$koky->setNumber('test');
+$pila = $smsService->getPila();
+$koky = $smsService->getKoky();
 
 
 $websites = json_decode(
