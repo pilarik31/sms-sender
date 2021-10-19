@@ -358,5 +358,13 @@
     <arg name="parallel" value="75" />
     <arg name="ignore" value="*/vendor/*"/>
     <arg value="ps"/>
+
+    <!-- 9. Slevomat strict coding standards -->
+    <!-- <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint"/> -->
+    <!-- <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/> -->
+    <!-- <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint"/> -->
+    <!-- <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/> -->
+    <!-- <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/> -->
+
     
 </ruleset>

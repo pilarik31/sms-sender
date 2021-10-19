@@ -7,6 +7,7 @@ use SMSSender\Service\SMSService;
 final class SystemUpdate
 {
     public string $hostname;
+    /** @var array<int, int> */
     public array $returnCodes = [];
     private SMSService $smsService;
 
@@ -23,7 +24,7 @@ final class SystemUpdate
         $this->afterRunEval();
     }
 
-    private function afterRunEval()
+    private function afterRunEval(): void
     {
         if ($this->returnCodes[0] !== 0 || $this->returnCodes[1] !== 0) {
             $this->smsService->getPila()->send('SZup', 'fail');
