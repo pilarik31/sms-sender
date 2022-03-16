@@ -1,6 +1,6 @@
 {
     "name": "pila/sms-sender",
-    "description": "Tool, which can monitor site status, or update stuff.",
+    "description": "Tool, which can send SMS to Czech operators.",
     "license": "GPL-3.0-or-later",
     "require": {
         "guzzlehttp/guzzle": "^7.0",
