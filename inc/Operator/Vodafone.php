@@ -24,7 +24,7 @@ class Vodafone implements ISMS
     public function setNumber(string $number): self
     {
         $this->number = $number;
-        $this->email = $this->emailFromNumber($number);
+        $this->email = $this->emailFromNumber($this->number);
         return $this;
     }
 
